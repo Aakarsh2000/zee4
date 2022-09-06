@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home'
+import NavBar from './components/NavBar';
+import {Routes, Route} from 'react-router-dom'
+import AboutUs from './components/AboutUs';
+import MyDefault from './components/MyDefault';
+import Teams from './components/Teams';
+import India from './components/India';
+import Pakistan from './components/Pakistan';
+import Players from './components/Players';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar/> <br></br><br></br><br></br>
+      
+      <Routes>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='aboutus' element={<AboutUs/>}></Route>
+        <Route path='teams' element= {<Teams/>}>
+          <Route index element= {<India/>}></Route>
+            <Route path ='india' element={<India/>}></Route>
+            <Route path ='pakistan' element={<Pakistan/>}></Route>             
+        </Route>
+
+        <Route path=':playerid' element={<Players/>}></Route>
+
+        <Route path='*' element={<MyDefault/>}> </Route>
+      </Routes>
     </div>
   );
 }
