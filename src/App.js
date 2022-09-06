@@ -8,12 +8,13 @@ import Teams from './components/Teams';
 import India from './components/India';
 import Pakistan from './components/Pakistan';
 import Players from './components/Players';
+import DemoUseRef from './components/DemoUseRef';
 
 function App() {
   return (
     <div className="App">
       <NavBar/> <br></br><br></br><br></br>
-      
+      <DemoUseRef/>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='aboutus' element={<AboutUs/>}></Route>
