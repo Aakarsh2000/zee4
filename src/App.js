@@ -10,13 +10,15 @@ import Pakistan from './components/Pakistan';
 import Players from './components/Players';
 import DemoUseRef from './components/DemoUseRef';
 import DemoUseReducer from './components/DemoUseReducer';
+import DemoUseMemo from './components/DemoUseMemo';
 
 function App() {
   return (
     <div className="App">
       <NavBar/> <br></br><br></br><br></br>
       {/* <DemoUseRef/> */}
-      <DemoUseReducer/>
+      {/* <DemoUseReducer/> */}
+      <DemoUseMemo/>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='aboutus' element={<AboutUs/>}></Route>
